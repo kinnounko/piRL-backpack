@@ -23,7 +23,7 @@ An IRL backpack that uses a Raspberry Pi 4 as the encoder.
 6. Set up an RTMP server and OBS on an old PC or on a cloud service. 
 7. Install the OBS websocket plugin
 8. Port forward the server
-9. Assemble the backpack. Connect the powerbank to the raspberry pi via the USB C port.
+9. Assemble the backpack. Connect the powerbank to the Raspberry Pi via the USB C port.
 10. Connect the Micro-HDMI cable to the camera and to the Camlink. 
 11. Connect the phone/router to the Raspberry Pi via USB and enable tethering.
 12. Run this command on the Pi (this will start streaming to the RTMP server): `screen ffmpeg -re -f video4linux2 -thread_queue_size 2048 -input_format yuyv422 -s 1280x720 -r 60 -i /dev/video0 -f alsa -thread_queue_size 2048 -ac 2 -i plughw:CARD=1,DEV=0 -c:a aac -c:v h264_omx -threads 4 -f flv -b:v 1500k rtmp://<IP OF RTMP SERVER>/live/rJrwXAhRB`
